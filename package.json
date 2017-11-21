@@ -4,11 +4,12 @@
   "description": "",
   "main": "./current/core/index.js",
   "scripts": {
-    "preinstall": "ghost install -d src",
+    "postinstall": "ghost install -d src",
     "start": "node ./src/current/core/index",
     "dev": "DEBUG=ghost:* grunt dev",
     "test": "grunt validate --verbose",
-    "init": "yarn global add knex-migrator ember-cli grunt-cli && yarn install && grunt symlink && grunt init || true"
+    "init": "yarn global add knex-migrator ember-cli grunt-cli && yarn install && grunt symlink && grunt init || true",
+    "deploy": "git add .; git commit -m 'wip'; git push; git push heroku master"
   },
   "engines": {
     "node": "^4.5.0 || ^6.9.0 || ^8.9.0"
