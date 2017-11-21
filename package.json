@@ -4,8 +4,8 @@
   "description": "",
   "main": "./current/core/index.js",
   "scripts": {
-    "postinstall": "ghost install",
-    "start": "node index",
+    "preinstall": "ghost install -d src",
+    "start": "node ./src/current/core/index",
     "dev": "DEBUG=ghost:* grunt dev",
     "test": "grunt validate --verbose",
     "init": "yarn global add knex-migrator ember-cli grunt-cli && yarn install && grunt symlink && grunt init || true"
